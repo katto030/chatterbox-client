@@ -14,13 +14,15 @@ var Messages = {
 
   add: function(message) {
     //add to data object
-    var key = message['message_id'];
 
-    var value = {
+    let key = message['message_id'];
+
+    let value = {
       username: message['username'],
-      message: message['text'],
+      text: message['text'],
       roomname: message['roomname']
     };
+
     Messages._data[key] = value;
   },
 
@@ -29,6 +31,11 @@ var Messages = {
   },
 
   retrieve: function(messageID) {
+    if (Messages._data[messageID]) {
+      return Messages._data[messageID];
+    } else {
+      console.error(`message ID ${messageID} does NOT exist`);
+    }
     //grab the message
     // if messageID is found inside of data object
     //return that message

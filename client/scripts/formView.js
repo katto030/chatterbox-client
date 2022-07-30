@@ -11,13 +11,16 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
-    // Stop the browser from submitting the form
     event.preventDefault();
+    var message = {
+      username: `${App.username}`,
+      text: `${$(this).serialize().slice(8)}`,
+      roomname: `${RoomsView.handleChange()}`
+    };
 
-    // TODO: Currently, this is all handleSubmit does.
-    // Make this function actually send a message to the Parse API.
-  
-    console.log('click!');
+    // Parse.create(message);
+    MessagesView.renderMessage(message);
+
   },
 
   setStatus: function(active) {
