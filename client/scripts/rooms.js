@@ -11,3 +11,4 @@ var Rooms = {
   // mark a room as selected, etc.
 
 };
+

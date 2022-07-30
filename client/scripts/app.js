@@ -26,6 +26,7 @@ var App = {
   fetch: function(callback = () =>{}) {
     //use callback
     Parse.readAll((data) => {
+      console.log(data);
       // examine the response from the server request:
       for (let message of data) {
         Messages.add(message);
@@ -35,7 +36,6 @@ var App = {
       //call from rooms.js and messages.js
 
     });
-
     callback();
   },
 

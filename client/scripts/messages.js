@@ -14,18 +14,24 @@ var Messages = {
 
   add: function(message) {
     //add to data object
+    var key = message['message_id'];
 
-    console.log('I am a function');
-
-    return 0;
+    var value = {
+      username: message['username'],
+      message: message['text'],
+      roomname: message['roomname']
+    };
+    Messages._data[key] = value;
   },
 
   displayAll: function() {
     //display messages on the page
   },
 
-  retrieve: function() {
+  retrieve: function(messageID) {
     //grab the message
+    // if messageID is found inside of data object
+    //return that message
   }
 
 };
