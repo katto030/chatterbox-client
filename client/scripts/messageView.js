@@ -9,9 +9,13 @@ var MessageView = {
       <!--
       <div class="chat">
         <div class="username"></div>
+          <p><%-${username}%><%-${message}%></p>
         <div></div>
       </div>
       -->
     `)
 
 };
+
+// need another method to append to where it needs to go
+// somewhere there should be a loop

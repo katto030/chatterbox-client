@@ -23,14 +23,20 @@ var App = {
     // continually, instead of just once at the start.
   },
 
-  fetch: function(callback = ()=>{}) {
+  fetch: function(callback = () =>{}) {
+    //use callback
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
-
+      for (let message of data) {
+        Messages.add(message);
+      }
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+      //call from rooms.js and messages.js
+
     });
+
+    callback();
   },
 
   startSpinner: function() {

@@ -12,10 +12,10 @@ var Parse = {
 
   readAll: function(successCB, errorCB = null) {
     $.ajax({
-      url: Parse.server,
-      type: 'GET',
-      data: { order: '-createdAt' },
-      contentType: 'application/json',
+      url: Parse.server, // the parse API or other website to which we want to send a request
+      type: 'GET', // HTTP verb - tells the server what action  to take
+      data: { order: '-createdAt' }, //data sent to the server, which specifies extra options for how the "get" should happen
+      contentType: 'application/json', // MIME-type---the format of the content you are providing to the serve
       success: successCB,
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to fetch messages', error);
@@ -24,3 +24,12 @@ var Parse = {
   }
 
 };
+
+
+// console.log(10);
+// $.ajax({
+//   success: function() {
+//     console.log(5);
+//   }
+// });
+// console.log(11);
