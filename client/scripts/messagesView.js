@@ -13,14 +13,13 @@ var MessagesView = {
   },
 
   render: function() {
-    console.log(Messages._data);
     for (let msg in Messages._data) {
       MessagesView.renderMessage(Messages._data[msg]);
     }
   },
 
   renderMessage: function(message) {
-    $('#chats').append(MessageView.render(message));
+    $('#chats').prepend(MessageView.render(message));
   },
 
   handleClick: function(event) {

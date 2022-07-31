@@ -5,12 +5,10 @@ var RoomsView = {
 
   $button: $('#rooms button'),
   $select: $('#rooms select'),
-  $room: $('#room'),
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
-
     var $lobby = $('<option id="room">Lobby</option>');
     RoomsView.$select.append($lobby);
 

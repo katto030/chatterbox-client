@@ -18,7 +18,7 @@ var FormView = {
       roomname: `${RoomsView.handleChange()}`
     };
 
-    // Parse.create(message);
+    Parse.create(message);
     MessagesView.renderMessage(message);
 
   },
